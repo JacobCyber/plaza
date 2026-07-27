@@ -1,0 +1,303 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="אגרת לדיירים | פלאזה יזמות והתחדשות עירונית"
+  description="המדריך שלכם להתחדשות עירונית — מכתב אישי מהנהלות פלאזה, שלבי התהליך, זכויות הדיירים ותשובות לשאלות נפוצות."
+>
+  <main id="main-content">
+  <section class="mx-auto max-w-screen-xl px-6 pb-16 pt-20 md:pb-24 md:pt-28">
+    <p class="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-faded">
+      <span class="inline-block h-px w-8 bg-ink/40"></span>
+      אגרת לדיירים
+    </p>
+    <h1 class="max-w-[18ch] text-balance font-serif text-5xl leading-[0.95] md:text-7xl">
+      המדריך שלכם
+      <span class="text-accent">להתחדשות עירונית.</span>
+    </h1>
+  </section>
+
+  <!-- PERSONAL LETTER -->
+  <section class="mx-auto max-w-screen-xl px-6 pb-20">
+    <div class="rounded-[min(1vw,16px)] bg-paper px-8 py-10 md:px-16 md:py-14">
+      <div class="mx-auto max-w-[64ch] space-y-6">
+        <p class="font-serif text-2xl leading-relaxed md:text-3xl">דיירים יקרים,</p>
+        <div class="space-y-4 text-base leading-relaxed text-ink/80">
+          <p>
+            התחדשות עירונית היא הרבה מעבר לפרויקט בנייה.
+          </p>
+          <p>
+            מאחורי כל בניין, כל דירה וכל תכנית עומדים אנשים, משפחות וזיכרונות. לכן אנו מאמינים שתהליך התחדשות עירונית אמיתי חייב להתחיל בראש ובראשונה בהקשבה, בכבוד ובשותפות מלאה עם הדיירים.
+          </p>
+          <p>
+            כאשר הקמנו את פלאזה יזמות והתחדשות עירונית, שמנו לעצמנו מטרה ברורה: להביא גישה חדשה לעולם ההתחדשות העירונית.
+          </p>
+          <p>
+            גישה שבה הדיירים אינם רק צד בתהליך – אלא שותפים מלאים לדרך.
+          </p>
+          <p>
+            אנו מאמינים כי אמון נבנה באמצעות שקיפות. לכן לאורך כל הדרך נקפיד על תקשורת ברורה, עדכונים שוטפים והנגשת כל מידע חשוב לדיירים. החלטות משמעותיות, שלבי התקדמות ושינויים בתהליך יוצגו בצורה מסודרת וברורה, כדי שכל אחד ואחת ידעו היכן הדברים עומדים ומה צפוי בהמשך.
+          </p>
+          <p>
+            אנחנו יודעים שתהליך של התחדשות עירונית יכול להיות מורכב ולעיתים גם מלווה בחוסר ודאות. התפקיד שלנו הוא להפוך אותו לתהליך ברור, מקצועי ונעים יותר – באמצעות ליווי אישי, זמינות והקשבה אמיתית לצרכים שלכם.
+          </p>
+          <p>
+            לצד הגישה האנושית של פלאזה, אנו מביאים ניסיון מקצועי משמעותי באמצעות שיתוף הפעולה עם קבוצת טל שג, בעלת ניסיון רב בתחום היזמות והבנייה בישראל. השילוב בין ניסיון מוכח לבין הסתכלות חדשה על מערכת היחסים עם הדיירים מאפשר לנו להוביל תהליכים באחריות, במקצועיות ובמחויבות מלאה.
+          </p>
+          <p>
+            אנחנו רואים בכם שותפים ליצירת העתיד של הבית שלכם ושל הקהילה שלכם.
+          </p>
+          <p>
+            החזון שלנו פשוט: לבנות לא רק בניינים חדשים, אלא ליצור סביבת מגורים טובה יותר, תוך שמירה על אמון, כבוד ושיתוף פעולה לאורך כל הדרך.
+          </p>
+          <p>
+            אנחנו מודים לכם על האמון ומתחייבים להיות לצדכם בכל שלב בתהליך.
+          </p>
+        </div>
+        <div class="border-t border-line pt-6">
+          <p class="text-sm text-faded">בכבוד רב,</p>
+          <p class="mt-1 font-serif text-lg">הנהלות פלאזה יזמות והתחדשות עירונית</p>
+          <p class="text-xs text-faded">ושותפינו מקבוצת טל שג</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STAGES -->
+  <section class="mx-auto max-w-screen-xl px-6 pb-20">
+    <div class="border-t border-line pt-12">
+      <p class="mb-4 text-[11px] uppercase tracking-[0.3em] text-faded">
+        <span class="inline-block h-px w-8 bg-ink/40"></span>
+        שלבי התהליך
+      </p>
+      <h2 class="mb-12 max-w-[24ch] text-balance font-serif text-3xl md:text-5xl">
+        משלב הייסוד
+        <span class="text-accent">ועד למסירת המפתחות.</span>
+      </h2>
+
+      <div class="space-y-0">
+        {
+          [
+            {
+              n: "01",
+              title: "בחירת יזם",
+              copy: "הדיירים בוחרים יזם מוביל שינהל את הפרויקט. בחירה זו מבוססת על ניסיון, אמינות והצעה כלכלית הוגנת. פלאזה וטל שג מלוות את הדיירים כבר בשלב זה.",
+            },
+            {
+              n: "02",
+              title: "תכנון ועיצוב",
+              copy: "מתבצע תכנון אדריכלי מפורט של הבניין החדש, כולל תכנון הדירות, השטחים המשותפים והחניון. הדיירים שותפים לתהליך קבלת ההחלטות.",
+            },
+            {
+              n: "03",
+              title: "אישורים וביורוקרטיה",
+              copy: "קבלת האישורים הנדרשים מהרשויות המקומיות ומהגופים הממשלתיים. שלב שבו המקצועיות של היזם קריטית להתמודדות עם דרישות מורכבות.",
+            },
+            {
+              n: "04",
+              title: "בנייה",
+              copy: "ביצוע הבנייה בפועל — מהריסה ועד בנייה חדשה. במהלך זה הדיירים מתגוררים בדירות זמניות (במקרה של פינוי) או ממשיכים לגור במבנה (במקרה של חיזוק ותוספת).",
+            },
+            {
+              n: "05",
+              title: "מסירה",
+              copy: "מסירת הדירות החדשות לדיירים. בדיקת איכות, ליטוש אחרון וכניסה לבית החדש. הליווי של פלאזה לא נגמר במסירה — אנחנו כאן גם אחרי.",
+            },
+          ].map((stage, i) => (
+            <div class:list={["flex gap-6 border-t border-line py-8 md:gap-10", i === 4 && "border-b"]}>
+              <div class="shrink-0">
+                <span class="font-serif text-4xl text-accent/40 tabular-nums">{stage.n}</span>
+              </div>
+              <div class="space-y-3">
+                <h3 class="font-serif text-2xl">{stage.title}</h3>
+                <p class="max-w-[60ch] text-sm leading-relaxed text-faded">{stage.copy}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- TENANT RIGHTS -->
+  <section class="mx-auto max-w-screen-xl px-6 pb-20">
+    <div class="border-t border-line pt-12">
+      <p class="mb-4 text-[11px] uppercase tracking-[0.3em] text-faded">
+        <span class="inline-block h-px w-8 bg-ink/40"></span>
+        זכויותיכם
+      </p>
+      <h2 class="mb-12 max-w-[22ch] text-balance font-serif text-3xl md:text-5xl">
+        מה מגיע
+        <span class="text-accent">לכם.</span>
+      </h2>
+
+      <div class="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+        <div class="space-y-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">שקיפות מלאה</h3>
+          <p class="text-sm leading-relaxed text-faded">זכותכם לקבל מידע מלא על כל שלבי הפרויקט, העלויות והתוכניות — ללא הסתרות.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">חוזה ברור</h3>
+          <p class="text-sm leading-relaxed text-faded">זכותכם לחוזה מפורט ומוגן, המפרט את כל הזכויות וההתחייבויות.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 16v-4"></path>
+              <path d="M12 8h.01"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">דירות חלופיות</h3>
+          <p class="text-sm leading-relaxed text-faded">במקרה של פינוי, זכותכם לדירה חלופית או פיצוי הולם לתקופת הבנייה.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">אחריות על הבנייה</h3>
+          <p class="text-sm leading-relaxed text-faded">זכותכם לאחריות מלאה על איכות הבנייה ולתיקונים במידת הצורך לאחר המסירה.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">שותפות בהחלטות</h3>
+          <p class="text-sm leading-relaxed text-faded">זכותכם להשתתף בקבלת ההחלטות על עיצוב הבניין, השטחים המשותפים והמפרט הטכני.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">הגנה על הזכויות</h3>
+          <p class="text-sm leading-relaxed text-faded">זכותכם לייצוג משפטי ולשמירה על זכויותיכם לאורך כל התהליך.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mx-auto max-w-screen-xl px-6 pb-32">
+    <div class="border-t border-line pt-12">
+      <p class="mb-4 text-[11px] uppercase tracking-[0.3em] text-faded">
+        <span class="inline-block h-px w-8 bg-ink/40"></span>
+        שאלות נפוצות
+      </p>
+      <h2 class="mb-12 max-w-[22ch] text-balance font-serif text-3xl md:text-5xl">
+        מה שואלים
+        <span class="text-accent">אותנו.</span>
+      </h2>
+
+      <div class="space-y-0" data-faq>
+        {
+          [
+            {
+              q: "מה זה פינוי-בינוי?",
+              a: "פינוי-בינוי הוא תהליך של הריסת מבנה מגורים ישן ובניית מבנה חדש במקומו. הדיירים מתפנים מהדירה הישנה, ועם סיום הבנייה, נכנסים לדירה חדשה, גדולה יותר ובסטנדרט גבוה יותר. התהליך כולל לרוב תוספת של יחידות דיור, שטחים ציבוריים וחניון.",
+            },
+            {
+              q: "כמה זמן לוקח התהליך?",
+              a: "תהליך התחדשות עירונית נמשך לרוב בין 5 ל-10 שנים, מתוכם 2-4 שנים של תכנון ואישורים, ו-3-6 שנים של בנייה. היזם מתחייב ללוחות זמנים ברורים ומעדכן את הדיירים בכל שלב.",
+            },
+            {
+              q: "מה קורה בזמן הבנייה?",
+              a: "במקרה של פינוי, הדיירים מתגוררים בדירה חלופית או מקבלים פיצוי כספי. היזם דואג לכל הסידורים Logistic. במקרה של חיזוק ותוספת, הדיירים ממשיכים לגור במבנה והעבודות מתבצעות תוך מזמור נזק מינימלי.",
+            },
+            {
+              q: "מה הזכויות שלי כדייר?",
+              a: "כדייר, יש לכם זכויות רבות: שקיפות מלאה, חוזה ברור, דירה חלופית (במקרה של פינוי), אחריות על הבנייה, שותפות בהחלטות והגנה על הזכויות. כל הזכויות מפורטות בחוזה ההתקשרות עם היזם.",
+            },
+            {
+              q: "האם אני חייב להסכים לתהליך?",
+              a: "לא. תהליך התחדשות עירונית דורש הסכמה של רוב הדיירים (לרוב 66%-80% תלוי בתוכנית). אף דייר לא נאלץ להשתתף בתהליך אם אינו מעוניין, אך ברוב המקרים, הדיירים שמשתתפים נהנים מיתרונות משמעותיים.",
+            },
+            {
+              q: "מה היתרון עבור הדיירים?",
+              a: "היתרונות רבים: דירה חדשה ומודרנית, שטח גדול יותר, ערך נדל\"ן גבוה יותר, בניין עם בידוד תרמי ואקוסטי, חניון, מעלית, ולעיתים גם מרפסת. בנוסף, הבניין החדש עומד בתקני בנייה חדישים ובטיחותיים.",
+            },
+          ].map((item, i) => (
+            <div class="border-b border-line">
+              <button
+                type="button"
+                class="flex w-full items-center justify-between gap-4 py-6 text-right transition-colors hover:text-accent"
+                data-faq-toggle
+                aria-expanded="false"
+              >
+                <span class="font-serif text-xl">{item.q}</span>
+                <span class="shrink-0 text-2xl text-accent transition-transform duration-300" data-faq-icon>+</span>
+              </button>
+              <div class="hidden pb-6 text-sm leading-relaxed text-faded" data-faq-answer>
+                {item.a}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-screen-xl px-6 pb-32">
+    <div class="rounded-[min(1vw,16px)] bg-paper px-8 py-12 text-center md:px-16">
+      <h2 class="text-balance font-serif text-2xl md:text-3xl">
+        יש לכם שאלות נוספות?
+      </h2>
+      <p class="mx-auto mt-3 max-w-[48ch] text-sm text-faded">
+        אנחנו כאן בשבילכם. צרו קשר ונאשר לכם בהקדם.
+      </p>
+      <div class="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
+        >
+          צור קשר
+          <span aria-hidden="true">←</span>
+        </a>
+        <a
+          href="mailto:OFFICE@PLAZA-IL.COM"
+          class="inline-flex items-center gap-3 rounded-full px-7 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-ink ring-1 ring-line transition-colors hover:bg-paper"
+        >
+          OFFICE@PLAZA-IL.COM
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    document.querySelectorAll("[data-faq-toggle]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector("[data-faq-icon]");
+
+        button.setAttribute("aria-expanded", String(!expanded));
+        if (answer) answer.classList.toggle("hidden");
+        if (icon) icon.style.transform = expanded ? "rotate(0deg)" : "rotate(45deg)";
+      });
+    });
+  </script>
+  </main>
+</BaseLayout>

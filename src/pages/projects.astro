@@ -1,0 +1,113 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import melachImg from "@/assets/projects/melach-haaretz.webp";
+import migdalImg from "@/assets/projects/migdal-malom.jpg";
+import { projects, getProjectIndex, padNumber } from "@/data/projects.js";
+---
+
+<BaseLayout
+  title="פרויקטים | פלאזה יזמות והתחדשות עירונית"
+  description="עשר שנים של ניסיון, עשרים פרויקטים של איכות — הפרויקטים של פלאזה יזמות והתחדשות עירונית וקבוצת טל שג בישראל ובקנדה."
+>
+  <main id="main-content">
+  <section class="mx-auto max-w-screen-xl px-6 pb-8 pt-20 md:pb-12 md:pt-28">
+    <p class="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-faded">
+      <span class="inline-block h-px w-8 bg-ink/40"></span>
+      הפרויקטים שלנו
+    </p>
+    <h1 class="max-w-[20ch] text-balance font-serif text-5xl leading-[0.95] md:text-7xl">
+      עשרים
+      <span class="text-accent">פרויקטים של איכות.</span>
+    </h1>
+    <p class="mt-8 max-w-[58ch] text-lg leading-relaxed text-faded">
+      ניסיון מוכח בישראל ובקנדה. פלאזה וקבוצת טל שג מובילות פרויקטים משמעותיים בתחום ההתחדשות העירונית והבנייה למגורים.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-screen-xl px-6 pb-32">
+    <!-- Featured projects with images -->
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <!-- Melach Haaretz -->
+      <div class="group relative block aspect-[16/10] overflow-hidden rounded-[min(1vw,16px)] bg-paper md:aspect-[16/9]">
+        <Image
+          src={melachImg}
+          alt="מלח הארץ — פרויקט התחדשות עירונית"
+          width={1200}
+          height={675}
+          format="webp"
+          loading="eager"
+          class="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.02]"
+        />
+        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(42,44,32,0.75) 0%, transparent 50%)"></div>
+        <div class="absolute bottom-0 right-0 p-6 md:p-10">
+          <p class="text-[10px] uppercase tracking-[0.3em] text-white/60">ישראל · 01</p>
+          <p class="mt-2 font-serif text-3xl text-white md:text-4xl">מלח הארץ</p>
+        </div>
+      </div>
+
+      <!-- Migdal Malom -->
+      <div class="group relative block aspect-[16/10] overflow-hidden rounded-[min(1vw,16px)] bg-paper md:aspect-[16/9]">
+        <Image
+          src={migdalImg}
+          alt="מגדל מרום — פרויקט התחדשות עירונית"
+          width={1200}
+          height={675}
+          format="jpg"
+          loading="eager"
+          class="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.02]"
+        />
+        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(42,44,32,0.75) 0%, transparent 50%)"></div>
+        <div class="absolute bottom-0 right-0 p-6 md:p-10">
+          <p class="text-[10px] uppercase tracking-[0.3em] text-white/60">ישראל · 03</p>
+          <p class="mt-2 font-serif text-3xl text-white md:text-4xl">מגדל מרום</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- All projects numeric grid -->
+    <div class="mt-16">
+      <div class="mb-8 flex items-end justify-between gap-6 border-t border-line pt-10">
+        <div>
+          <p class="mb-2 text-[11px] uppercase tracking-[0.3em] text-faded">כל הפרויקטים</p>
+          <h2 class="max-w-[22ch] text-balance font-serif text-3xl md:text-4xl">
+            ניסיון <span class="text-accent">מוכח בכל פרויקט.</span>
+          </h2>
+        </div>
+        <div class="hidden text-sm text-faded md:block">
+          {projects.length} פרויקטים
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {projects.map((project, i) => (
+          <div class="group relative rounded-[min(1vw,12px)] bg-paper p-6 transition-all duration-300 hover:ring-1 hover:ring-accent/30">
+            <span class="font-serif text-4xl text-accent/40 tabular-nums transition-colors group-hover:text-accent">{padNumber(i + 1)}</span>
+            <h3 class="mt-3 font-serif text-xl leading-tight">{project.name}</h3>
+            <p class="mt-1 text-[10px] uppercase tracking-[0.2em] text-faded">
+              {project.region === "israel" ? "ישראל" : "קנדה"}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-20 rounded-[min(1vw,12px)] bg-paper px-8 py-12 text-center md:px-16">
+      <h2 class="text-balance font-serif text-2xl md:text-3xl">
+        רוצים לשמוע על הפרויקטים שלנו?
+      </h2>
+      <p class="mx-auto mt-3 max-w-[48ch] text-sm text-faded">
+        צרו קשר để לקבל מידע נוסף על כל פרויקט.
+      </p>
+      <a
+        href="/contact"
+        class="mt-6 inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
+      >
+        צור קשר
+        <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
+      </a>
+    </div>
+  </section>
+  </main>
+</BaseLayout>

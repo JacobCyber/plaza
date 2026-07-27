@@ -1,0 +1,371 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import heroImg from "@/assets/plaza-hero.png";
+import logo from "@/assets/logo.webp";
+import melachImg from "@/assets/projects/melach-haaretz.webp";
+import migdalImg from "@/assets/projects/migdal-malom.jpg";
+import { projects, padNumber } from "@/data/projects.js";
+
+const talShagProjects = projects.filter((p) => p.region === "israel");
+---
+
+<BaseLayout
+  title="פלאזה יזמות והתחדשות עירונית | התחדשות עירונית"
+  description="פלאזה יזמות והתחדשות עירונית, בשיתוף קבוצת טל שג — מובילים את העתיד של ההתחדשות העירונית בישראל. פינוי-בינוי, שקיפות ושותפות אמיתית עם הדיירים."
+  image={heroImg}
+>
+  <main id="main-content">
+  <h1 class="sr-only">פלאזה יזמות והתחדשות עירונית — מובילים את העתיד של ההתחדשות העירונית</h1>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden bg-base">
+    <!-- Mobile -->
+    <div class="md:hidden">
+      <div class="aspect-[4/3] w-full">
+        <Image
+          src={heroImg}
+          alt="בניינים מודרניים — התחדשות עירונית"
+          width={1600}
+          height={1200}
+          format="png"
+          loading="eager"
+          decoding="sync"
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <div class="space-y-6 px-6 py-12">
+        <Image src={logo} alt="פלאזה" height={48} width={160} format="webp" loading="eager" decoding="sync" class="h-12 w-auto" />
+        <p class="text-balance font-serif text-4xl leading-[0.95]">
+          מובילים את העתיד
+          <br />
+          <span class="text-accent">של ההתחדשות העירונית.</span>
+        </p>
+        <p class="max-w-[48ch] text-pretty leading-relaxed text-faded">
+          פלאזה יזמות והתחדשות עירונית, בשיתוף קבוצת טל שג, מביאה שילוב בין ניסיון מוכח, חשיבה חדשה ושותפות אמיתית עם הדיירים.
+        </p>
+        <div class="flex flex-col items-start gap-4 pt-2 sm:flex-row sm:items-center">
+          <a
+            href="/contact"
+            class="group inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
+          >
+            בדיקת התאמה לפרויקט
+            <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
+          </a>
+          <a href="/#about" class="text-[11px] uppercase tracking-[0.2em] text-faded transition-colors hover:text-ink">
+            אודותינו ←
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop -->
+    <div class="relative hidden h-[88vh] max-h-[920px] min-h-[640px] w-full md:block">
+      <Image
+        src={heroImg}
+        alt="בניינים מודרניים — התחדשות עירונית"
+        width={1600}
+        height={1200}
+        format="png"
+        loading="eager"
+        decoding="sync"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0"
+        style="background: linear-gradient(to left, var(--color-base) 0%, var(--color-base) 30%, color-mix(in oklab, var(--color-base) 55%, transparent) 45%, color-mix(in oklab, var(--color-base) 5%, transparent) 65%, transparent 80%)"
+      >
+      </div>
+      <div
+        aria-hidden="true"
+        class="absolute inset-x-0 bottom-0 h-40"
+        style="background: linear-gradient(180deg, transparent, var(--color-base))"
+      >
+      </div>
+      <div class="relative mx-auto flex h-full max-w-screen-xl items-center px-6">
+        <div class="max-w-[480px] space-y-8">
+          <Image src={logo} alt="פלאזה" height={56} width={180} format="webp" loading="eager" decoding="sync" class="h-14 w-auto" />
+          <p class="text-balance font-serif text-5xl leading-[0.95] lg:text-6xl">
+            מובילים את העתיד
+            <br />
+            <span class="text-accent">של ההתחדשות העירונית.</span>
+          </p>
+          <p class="max-w-[48ch] text-pretty leading-relaxed text-faded md:text-lg">
+            פלאזה יזמות והתחדשות עירונית, בשיתוף קבוצת טל שג, מביאה שילוב בין ניסיון מוכח, חשיבה חדשה ושותפות אמיתית עם הדיירים.
+          </p>
+          <div class="flex items-center gap-6 pt-2">
+            <a
+              href="/contact"
+              class="group inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
+            >
+              בדיקת התאמה לפרויקט
+              <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
+            </a>
+            <a href="/#about" class="text-[11px] uppercase tracking-[0.2em] text-faded transition-colors hover:text-ink">
+              אודותינו ←
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / VALUES SECTION -->
+  <section id="about" class="mx-auto max-w-screen-xl px-6 pt-24 md:pt-32">
+    <div class="mb-12 border-t border-line pt-10">
+      <p class="mb-4 text-[11px] uppercase tracking-[0.3em] text-faded">
+        <span class="inline-block h-px w-8 bg-ink/40"></span>
+        הגישה שלנו
+      </p>
+      <h2 class="max-w-[24ch] text-balance font-serif text-3xl md:text-5xl">
+        התחדשות עירונית
+        <span class="text-accent">מתחילה באנשים.</span>
+      </h2>
+    </div>
+    <div class="grid gap-10 md:grid-cols-12 md:gap-16">
+      <div class="md:col-span-5">
+        <p class="text-lg leading-relaxed text-faded">
+          פלאזה מאמינה שהתחדשות עירונית מתחילה באנשים. הדיירים הם שותפים מלאים לתהליך, ולכן אנו שמים דגש על שקיפות, הקשבה, ליווי אישי ויצירת אמון — מהרגע הראשון ועד למסירת המפתחות.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-8 md:col-span-6 md:col-start-7">
+        <div class="space-y-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">שקיפות</h3>
+          <p class="text-sm leading-relaxed text-faded">תקשורת ברורה ופתוחה לאורך כל שלבי הפרויקט.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">הקשבה</h3>
+          <p class="text-sm leading-relaxed text-faded">הבנת הצרכים והרצונות של בעלי הדירות.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">ליווי אישי</h3>
+          <p class="text-sm leading-relaxed text-faded">מלווה את הדיירים בכל צעד בתהליך.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl">יצירת אמון</h3>
+          <p class="text-sm leading-relaxed text-faded">בניית יחסים חזקים ואמינים עם כל דייר ודיירת.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERSHIP SECTION (Tal Shag) -->
+  <section id="partnership" class="mt-32 md:mt-48">
+    <div class="mx-auto max-w-screen-xl px-6">
+      <div class="border-t border-line pt-12">
+        <p class="mb-4 text-[11px] uppercase tracking-[0.3em] text-faded">
+          <span class="inline-block h-px w-8 bg-ink/40"></span>
+          שותפות
+        </p>
+        <h2 class="mb-6 max-w-[24ch] text-balance font-serif text-3xl md:text-5xl">
+          הניסיון שמאחורי
+          <span class="text-accent">הדרך.</span>
+        </h2>
+        <p class="max-w-[56ch] text-pretty leading-relaxed text-faded md:text-lg">
+          קבוצת טל שג מביאה ניסיון רב שנים בעולם הבנייה והיזמות, כולל פעילות בפרויקטים משמעותיים בישראל ובשיתופי פעולה עם חברות מובילות כגון קבוצת אזורים.
+        </p>
+      </div>
+    </div>
+
+    <!-- Featured projects with images -->
+    <div class="mx-auto mt-12 grid max-w-screen-2xl grid-cols-1 gap-6 px-6 md:grid-cols-2">
+      <a href="/projects" class="group relative block aspect-[16/10] overflow-hidden rounded-[min(1vw,12px)] bg-paper md:aspect-[16/9]">
+        <Image
+          src={melachImg}
+          alt="מלך הארץ — פרויקט התחדשות עירונית"
+          width={1200}
+          height={675}
+          format="webp"
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.03]"
+        />
+        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(42,44,32,0.7) 0%, transparent 50%)"></div>
+        <div class="absolute bottom-0 right-0 p-6 md:p-8">
+          <p class="text-[10px] uppercase tracking-[0.3em] text-white/70">פרויקט בולט</p>
+          <p class="mt-1 font-serif text-2xl text-white md:text-3xl">מלח הארץ</p>
+        </div>
+      </a>
+      <a href="/projects" class="group relative block aspect-[16/10] overflow-hidden rounded-[min(1vw,12px)] bg-paper md:aspect-[16/9]">
+        <Image
+          src={migdalImg}
+          alt="מגדל מרום — פרויקט התחדשות עירונית"
+          width={1200}
+          height={675}
+          format="jpg"
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.03]"
+        />
+        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(42,44,32,0.7) 0%, transparent 50%)"></div>
+        <div class="absolute bottom-0 right-0 p-6 md:p-8">
+          <p class="text-[10px] uppercase tracking-[0.3em] text-white/70">פרויקט בולט</p>
+          <p class="mt-1 font-serif text-2xl text-white md:text-3xl">מגדל מרום</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Numeric grid of all Israel projects -->
+    <div class="mx-auto mt-12 max-w-screen-xl px-6">
+      <div class="rounded-[min(1vw,12px)] bg-paper px-6 py-8 md:px-10 md:py-10">
+        <p class="mb-6 text-[11px] uppercase tracking-[0.3em] text-faded">כל הפרויקטים בישראל</p>
+        <div class="grid grid-cols-2 gap-x-8 gap-y-4 md:grid-cols-3 lg:grid-cols-5">
+          {talShagProjects.map((project, i) => (
+            <a href="/projects" class="group flex items-baseline gap-3 border-b border-line/50 py-3 transition-colors hover:border-accent">
+              <span class="font-serif text-2xl text-accent/60 transition-colors group-hover:text-accent tabular-nums">{padNumber(i + 1)}</span>
+              <span class="text-sm text-ink transition-colors group-hover:text-accent">{project.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="mx-auto mt-12 max-w-screen-xl px-6">
+      <div class="grid grid-cols-2 gap-x-6 gap-y-8 border-y border-line py-10 md:grid-cols-4">
+        <div class="space-y-1">
+          <p class="font-serif text-4xl tabular-nums md:text-5xl">10</p>
+          <p class="text-[10px] uppercase tracking-[0.3em] text-faded">פרויקטים בישראל</p>
+        </div>
+        <div class="space-y-1">
+          <p class="font-serif text-4xl tabular-nums md:text-5xl">10</p>
+          <p class="text-[10px] uppercase tracking-[0.3em] text-faded">פרויקטים בקנדה</p>
+        </div>
+        <div class="space-y-1">
+          <p class="font-serif text-4xl tabular-nums md:text-5xl">20</p>
+          <p class="text-[10px] uppercase tracking-[0.3em] text-faded">פרויקטים בסך הכול</p>
+        </div>
+        <div class="space-y-1">
+          <p class="font-serif text-4xl tabular-nums md:text-5xl">שנים</p>
+          <p class="text-[10px] uppercase tracking-[0.3em] text-faded">של ניסיון מוכח</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-12 max-w-screen-xl px-6">
+      <div class="rounded-[min(1vw,12px)] bg-paper px-8 py-10 md:px-12">
+        <blockquote class="text-balance font-serif text-2xl leading-[1.2] md:text-3xl">
+          "הניסיון של טל שג עם הגישה החדשנית של פלאזה
+          <span class="text-accent">יוצרת שילוב שילוב של עוצמה.</span>"
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES SECTION -->
+  <section id="advantages" class="mx-auto mt-32 max-w-screen-xl px-6 md:mt-48">
+    <div class="border-t border-line pt-12">
+      <p class="mb-4 text-[11px] uppercase tracking-[0.3em] text-faded">
+        <span class="inline-block h-px w-8 bg-ink/40"></span>
+        למה פלאזה
+      </p>
+      <h2 class="mb-12 max-w-[22ch] text-balance font-serif text-3xl md:text-5xl">
+        הערכים שמנחים
+        <span class="text-accent">אותנו.</span>
+      </h2>
+      <div class="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+        {
+          [
+            {
+              n: "01",
+              title: "ניסיון מוכח",
+              copy: "שילוב עם גורמים בעלי ניסיון רב בעולם הבנייה והיזמות, כולל פעילות בפרויקטים משמעותיים בישראל.",
+            },
+            {
+              n: "02",
+              title: "שותפות עם הדיירים",
+              copy: "ליווי מלא והקשבה לצרכים האמיתיים של בעלי הדיירים — מהרגע הראשון ועד למסירת המפתחות.",
+            },
+            {
+              n: "03",
+              title: "שקיפות מלאה",
+              copy: "תקשורת ברורה ופתוחה לאורך כל שלבי הפרויקט. בלי הפתעות, בלי אותיות קטנות.",
+            },
+            {
+              n: "04",
+              title: "חשיבה חדשה",
+              copy: "גישה מודרנית להתחדשות עירונית — שילוב בין מקצועיות לבין ראייה אנושית.",
+            },
+          ].map((item) => (
+            <div class="space-y-3 pt-2">
+              <p class="text-[10px] uppercase tracking-[0.3em] text-faded tabular-nums">{item.n}</p>
+              <h3 class="font-serif text-2xl">{item.title}</h3>
+              <p class="text-sm leading-relaxed text-faded">{item.copy}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="mx-auto mt-32 max-w-screen-xl px-6 md:mt-48">
+    <div class="border-t border-line pt-12">
+      <div class="mx-auto max-w-xl space-y-6 text-center">
+        <h2 class="text-balance font-serif text-3xl md:text-5xl">
+          ניסיון חזק מאחורינו.
+          <br />
+          <span class="text-accent">שותפות אמיתית לפנינו.</span>
+        </h2>
+        <p class="mx-auto max-w-[52ch] text-sm leading-relaxed text-faded">
+          מעוניינים לשמוע עוד? צרו קשר ובדקו התאמה לפרויקט שלכם. אנחנו כאן בשבילכם.
+        </p>
+        <div class="flex flex-col items-center gap-4 pt-4 sm:flex-row sm:justify-center">
+          <a
+            href="/contact"
+            class="group inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
+          >
+            בדיקת התאמה לפרויקט
+            <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
+          </a>
+          <a
+            href="mailto:OFFICE@PLAZA-IL.COM"
+            class="inline-flex items-center gap-3 rounded-full px-7 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-ink ring-1 ring-line transition-colors hover:bg-paper"
+          >
+            OFFICE@PLAZA-IL.COM
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "פלאזה יזמות והתחדשות עירונית",
+    url: Astro.site?.href ?? "https://plaza-il.com/",
+    description: "פלאזה יזמות והתחדשות עירונית — פינוי-בינוי ויצירת פתרונות מגורים חדשים בישראל.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "רמת הגולן 6",
+      addressLocality: "ירושלים",
+      addressCountry: "IL",
+    },
+    email: "OFFICE@PLAZA-IL.COM",
+  })}></script>
+  </main>
+</BaseLayout>

@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import logo from "@/assets/logo.webp";
+
+const year = new Date().getFullYear();
+---
+
+<footer id="contact" class="mt-32 border-t border-line py-24">
+  <div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-12 px-6 md:grid-cols-3">
+    <div class="space-y-4">
+      <Image src={logo} alt="פלאזה יזמות והתחדשות עירונית" height={48} width={160} format="webp" loading="lazy" class="h-12 w-auto" />
+      <p class="max-w-[32ch] text-sm leading-relaxed text-faded">
+        פלאזה יזמות והתחדשות עירונית — פינוי-בינוי ויצירת פתרונות מגורים חדשים בישראל.
+      </p>
+    </div>
+    <div class="space-y-4">
+      <h2 class="text-xs font-medium uppercase tracking-widest text-ink">ניווט</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/about" class="text-faded transition-colors hover:text-ink">אודותינו</a></li>
+        <li><a href="/projects" class="text-faded transition-colors hover:text-ink">פרויקטים</a></li>
+        <li><a href="/#partnership" class="text-faded transition-colors hover:text-ink">שותפות</a></li>
+        <li><a href="/tenants" class="text-faded transition-colors hover:text-ink">אגרת לדיירים</a></li>
+        <li><a href="/contact" class="text-faded transition-colors hover:text-ink">צור קשר</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h2 class="text-xs font-medium uppercase tracking-widest text-ink">פרטי קשר</h2>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-start gap-2 text-faded">
+          <span aria-hidden="true" class="mt-0.5 text-accent">📍</span>
+          <span>רמת הגולן 6, ירושלים</span>
+        </li>
+        <li>
+          <a href="mailto:OFFICE@PLAZA-IL.COM" class="flex items-center gap-2 text-faded transition-colors hover:text-ink">
+            <span aria-hidden="true" class="text-accent">✉</span>
+            OFFICE@PLAZA-IL.COM
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="mx-auto mt-16 max-w-screen-xl px-6">
+    <hr class="plaza-divider mb-6" />
+    <p class="text-[10px] uppercase tracking-[0.2em] text-faded">
+      © {year} פלאזה יזמות והתחדשות עירונית — כל הזכויות שמורות.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,232 @@
+---
+import { Image } from "astro:assets";
+import logo from "@/assets/logo.webp";
+
+const { currentPath = "/" } = Astro.props;
+
+const isActive = (href = "") => {
+  if (href === "/") return currentPath === "/";
+  return currentPath.startsWith(href);
+};
+
+const navItems = [
+  { href: "/about", label: "אודותינו" },
+  { href: "/projects", label: "פרויקטים" },
+  { href: "/#partnership", label: "שותפות" },
+  { href: "/tenants", label: "אגרת לדיירים" },
+  { href: "/contact", label: "צור קשר" },
+];
+---
+
+<nav class="sticky top-0 z-50 border-b border-line bg-base/80 backdrop-blur-md" aria-label="ניווט ראשי">
+  <div class="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-6">
+    <a href="/" class="flex items-center gap-3" aria-label="פלאזה — דף הבית">
+      <Image src={logo} alt="פלאזה יזמות והתחדשות עירונית" height={48} width={160} format="webp" loading="eager" decoding="sync" class="h-12 w-auto" />
+    </a>
+    <div class="hidden items-center gap-8 text-sm md:flex">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "transition-colors hover:text-accent",
+              isActive(item.href) ? "text-ink" : "text-faded",
+            ]}
+            aria-current={isActive(item.href) ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex items-center gap-3">
+      <a
+        href="/contact"
+        class="hidden items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.15em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)] md:inline-flex"
+      >
+        צור קשר
+      </a>
+      <button
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:text-accent md:hidden"
+        aria-label="פתח תפריט"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        data-mobile-menu-open
+      >
+        <span class="sr-only">פתח תפריט</span>
+        <span class="flex w-4 flex-col gap-1.5" aria-hidden="true">
+          <span class="h-px w-full bg-current"></span>
+          <span class="h-px w-full bg-current"></span>
+          <span class="h-px w-full bg-current"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-[60] hidden h-dvh overflow-hidden bg-base text-ink md:hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="תפריט ניווט"
+  data-mobile-menu
+>
+  <div class="flex h-full flex-col px-6 pb-6 pt-5">
+    <div class="flex h-11 items-center justify-between">
+      <a href="/" class="flex items-center gap-3" aria-label="פלאזה — דף הבית" data-mobile-menu-link>
+        <Image src={logo} alt="פלאזה" height={40} width={130} format="webp" loading="lazy" class="h-10 w-auto" />
+      </a>
+      <button
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:text-accent"
+        aria-label="סגור תפריט"
+        data-mobile-menu-close
+      >
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M6 6l12 12"></path>
+          <path d="M18 6L6 18"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex min-h-0 flex-1 flex-col gap-5 pt-7">
+      <div class="space-y-2.5">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                "block font-serif text-4xl leading-none transition-colors hover:text-accent",
+                isActive(item.href) ? "text-ink" : "text-faded",
+              ]}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              data-mobile-menu-link
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="mt-auto space-y-4 border-t border-line pt-6">
+        <a
+          href="/contact"
+          class="inline-flex w-full items-center justify-center rounded-full bg-accent px-7 py-4 text-[11px] font-medium uppercase tracking-[0.15em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
+          data-mobile-menu-link
+        >
+          צור קשר
+        </a>
+        <div class="space-y-1 text-sm">
+          <p class="text-[10px] uppercase tracking-[0.3em] text-faded">דוא״ל</p>
+          <a href="mailto:OFFICE@PLAZA-IL.COM" class="block transition-colors hover:text-accent" data-mobile-menu-link>
+            OFFICE@PLAZA-IL.COM
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const menu = document.querySelector("[data-mobile-menu]");
+    const openButton = document.querySelector("[data-mobile-menu-open]");
+    const closeButton = document.querySelector("[data-mobile-menu-close]");
+
+    if (!menu || !openButton || !closeButton) return;
+
+    const focusableSelector = [
+      "a[href]",
+      "button:not([disabled])",
+      "input:not([disabled])",
+      "select:not([disabled])",
+      "textarea:not([disabled])",
+      '[tabindex]:not([tabindex="-1"])',
+    ].join(",");
+    let lastFocusedElement;
+
+    function getFocusable() {
+      return Array.from(menu.querySelectorAll(focusableSelector)).filter((element) => {
+        return element instanceof HTMLElement && element.offsetParent !== null;
+      });
+    }
+
+    function lockScroll() {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    }
+
+    function unlockScroll() {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    }
+
+    function openMenu() {
+      lastFocusedElement = document.activeElement;
+      menu.classList.remove("hidden");
+      openButton.setAttribute("aria-expanded", "true");
+      lockScroll();
+      closeButton.focus({ preventScroll: true });
+    }
+
+    function closeMenu({ restoreFocus = true } = {}) {
+      menu.classList.add("hidden");
+      openButton.setAttribute("aria-expanded", "false");
+      unlockScroll();
+
+      if (restoreFocus && lastFocusedElement instanceof HTMLElement) {
+        lastFocusedElement.focus({ preventScroll: true });
+      }
+    }
+
+    openButton.addEventListener("click", openMenu);
+    closeButton.addEventListener("click", () => closeMenu());
+
+    menu.querySelectorAll("[data-mobile-menu-link]").forEach((link) => {
+      link.addEventListener("click", () => closeMenu({ restoreFocus: false }));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (menu.classList.contains("hidden")) return;
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeMenu();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusable = getFocusable();
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (!first || !last) return;
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 768px)").matches && !menu.classList.contains("hidden")) {
+        closeMenu({ restoreFocus: false });
+      }
+    });
+  })();
+</script>

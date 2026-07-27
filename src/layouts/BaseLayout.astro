@@ -1,0 +1,56 @@
+---
+import "../styles.css";
+import SiteFooter from "@/components/SiteFooter.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+
+const {
+  title = "פלאזה יזמות והתחדשות עירונית",
+  description = "פלאזה יזמות והתחדשות עירונית — פינוי-בינוי ויצירת פתרונות מגורים חדשים בישראל. שיתוף פעולה עם קבוצת טל שג.",
+  image,
+  noindex = false,
+  includeHeader = true,
+  includeFooter = true,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const ogImage = image ? new URL(image.src ?? image, Astro.site ?? Astro.url.origin).href : undefined;
+---
+
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="פלאזה יזמות והתחדשות עירונית" />
+    <meta name="theme-color" content="#FAFAF7" />
+    <link rel="canonical" href={canonicalUrl.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="פלאזה יזמות והתחדשות עירונית" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl.href} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+  </head>
+  <body class="bg-base text-ink">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:right-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-[var(--color-base)]"
+    >
+      דלג לתוכן
+    </a>
+    {includeHeader && <SiteHeader currentPath={Astro.url.pathname} />}
+    <div>
+      <slot />
+    </div>
+    {includeFooter && <SiteFooter />}
+  </body>
+</html>

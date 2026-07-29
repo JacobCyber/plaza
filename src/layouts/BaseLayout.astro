@@ -10,6 +10,7 @@ const {
   noindex = false,
   includeHeader = true,
   includeFooter = true,
+  maintenance = true,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
@@ -48,16 +49,38 @@ const ogImage = image ? new URL(image.src ?? image, Astro.site ?? Astro.url.orig
     </script>
   </head>
   <body class="bg-base text-ink">
-    <a
-      href="#main-content"
-      class="sr-only focus:not-sr-only focus:fixed focus:right-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-[var(--color-base)]"
-    >
-      דלג לתוכן
-    </a>
-    {includeHeader && <SiteHeader currentPath={Astro.url.pathname} />}
-    <div>
-      <slot />
-    </div>
-    {includeFooter && <SiteFooter />}
+    {
+      maintenance ? (
+        <div class="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+          <div class="mx-auto max-w-lg">
+            <p class="mb-4 text-[11px] uppercase tracking-[0.3em] text-faded">
+              <span class="inline-block h-px w-8 bg-ink/40 align-middle"></span>
+              שיפוצים
+            </p>
+            <h1 class="font-serif text-5xl leading-[0.95] md:text-7xl">
+              אנחנו
+              <span class="text-accent">בשיפוצים.</span>
+            </h1>
+            <p class="mt-6 text-lg leading-relaxed text-faded">
+              האתר עובר מתיחת פנים. נהיה איתכם חזרה בהקדם.
+            </p>
+          </div>
+        </div>
+      ) : (
+        <>
+          <a
+            href="#main-content"
+            class="sr-only focus:not-sr-only focus:fixed focus:right-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-[var(--color-base)]"
+          >
+            דלג לתוכן
+          </a>
+          {includeHeader && <SiteHeader currentPath={Astro.url.pathname} />}
+          <div>
+            <slot />
+          </div>
+          {includeFooter && <SiteFooter />}
+        </>
+      )
+    }
   </body>
 </html>

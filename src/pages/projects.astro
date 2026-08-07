@@ -1,11 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import HorizontalScroll from "@/components/HorizontalScroll.astro";
-import { projects, getFeaturedProjects } from "@/data/projects.js";
+import { projects } from "@/data/projects.js";
+import plazaLogo from "@/assets/logo.png";
 
-const featured = getFeaturedProjects();
-const rest = projects.filter((p) => !p.image);
+const numbered = projects.map((project, i) => ({ ...project, n: String(i + 1).padStart(2, "0") }));
 ---
 
 <BaseLayout
@@ -27,50 +26,53 @@ const rest = projects.filter((p) => !p.image);
     </div>
   </section>
 
-  <!-- PINNED HORIZONTAL SCROLL GALLERY -->
-  <section class="relative mt-16">
-    <HorizontalScroll ariaLabel="גלריית פרויקטים">
+  <!-- PROJECTS GRID -->
+  <section class="mx-auto max-w-screen-xl px-6 pb-28 pt-16">
+    <div class="grid grid-cols-1 gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
       {
-        featured.map((project) => (
-          <article class="group w-[80vw] flex-none sm:w-[52vw] md:w-[42vw] lg:w-[36vw]">
-            <div class="relative overflow-hidden rounded-[min(1vw,12px)] bg-paper">
-              {
-                project.image && (
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    width={1000}
-                    height={750}
-                    loading={project === featured[0] ? "eager" : "lazy"}
-                    class="aspect-[4/3] w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
-                  />
-                )
-              }
-              <div class="absolute inset-x-0 bottom-0 p-6" style="background: linear-gradient(to top, rgba(27,26,22,0.6) 0%, transparent 70%)"></div>
-            </div>
+        numbered.map((project) => (
+          <article class="group flex flex-col">
+            {
+              project.image ? (
+                <a href="/contact" class="block" tabindex="-1" aria-hidden="true">
+                  <div class="relative overflow-hidden rounded-[min(1vw,12px)] bg-paper">
+                    <Image
+                      src={project.image}
+                      alt=""
+                      width={1000}
+                      height={750}
+                      loading="lazy"
+                      class="aspect-[4/3] w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
+                    />
+                    <div class="absolute inset-x-0 bottom-0 p-6" style="background: linear-gradient(to top, rgba(27,26,22,0.6) 0%, transparent 70%)"></div>
+                    <span class="absolute top-4 right-4 font-serif text-sm tabular-nums text-base/80">{project.n}</span>
+                  </div>
+                </a>
+              ) : (
+                <a href="/contact" class="block" tabindex="-1" aria-hidden="true">
+                  <div class="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-[min(1vw,12px)] border border-line bg-paper p-10 transition-colors duration-500 group-hover:border-accent">
+                    <span class="absolute top-4 right-4 font-serif text-sm tabular-nums text-accent/60">{project.n}</span>
+                    <Image
+                      src={plazaLogo}
+                      alt=""
+                      width={320}
+                      height={120}
+                      loading="lazy"
+                      class="w-full max-w-[62%] object-contain opacity-80 transition-all duration-500 group-hover:opacity-100"
+                    />
+                  </div>
+                </a>
+              )
+            }
             <div class="mt-5 flex items-baseline justify-between gap-4 border-b border-line pb-4">
-              <h2 class="font-serif text-2xl font-light md:text-3xl">{project.name}</h2>
+              <h2 class="font-serif text-2xl font-light">{project.name}</h2>
+              <a href="/contact" class="text-[10px] uppercase tracking-[0.3em] text-accent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                לפרויקט
+              </a>
             </div>
           </article>
         ))
       }
-    </HorizontalScroll>
-  </section>
-
-  <!-- ALL PROJECTS LIST -->
-  <section class="mx-auto max-w-screen-xl px-6 pb-28 pt-10">
-    <div class="border-t border-line pt-14">
-      <div class="editorial-number mb-6">02</div>
-      <div class="editorial-frame mb-12">כל הפרויקטים</div>
-      <div class="grid grid-cols-1 gap-x-12 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
-        {
-          projects.map((project) => (
-            <div class="group flex items-baseline justify-between gap-4 border-b border-line/60 py-4 transition-colors hover:border-accent">
-              <p class="font-serif text-xl font-light">{project.name}</p>
-            </div>
-          ))
-        }
-      </div>
     </div>
   </section>
 

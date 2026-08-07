@@ -20,7 +20,6 @@ const featured = getFeaturedProjects();
   <section class="relative flex min-h-[100svh] w-full items-center overflow-hidden">
     <video
       src="/hero.mp4"
-      poster={heroPoster.src}
       autoplay
       muted
       loop
@@ -32,7 +31,7 @@ const featured = getFeaturedProjects();
     <div
       aria-hidden="true"
       class="absolute inset-0"
-      style="background: linear-gradient(to left, var(--color-base) 0%, color-mix(in oklab, var(--color-base) 72%, transparent) 40%, color-mix(in oklab, var(--color-base) 20%, transparent) 70%, transparent 100%)"
+      style="background: linear-gradient(to left, var(--color-base) 0%, color-mix(in oklab, var(--color-base) 82%, transparent) 45%, color-mix(in oklab, var(--color-base) 38%, transparent) 72%, transparent 100%)"
     ></div>
     <div
       aria-hidden="true"
@@ -47,7 +46,7 @@ const featured = getFeaturedProjects();
           <br />
           <span class="text-accent">של ההתחדשות העירונית.</span>
         </h2>
-        <p class="mt-9 max-w-[50ch] text-lg leading-[1.9] text-faded md:text-xl">
+        <p class="mt-9 max-w-[50ch] text-lg font-medium leading-[1.9] text-ink md:text-xl">
           פלאזה יזמות והתחדשות עירונית, בשיתוף קבוצת טל שג, מביאה שילוב בין ניסיון מוכח, חשיבה חדשה ושותפות אמיתית עם הדיירים.
         </p>
         <div class="mt-10 flex flex-wrap items-center gap-8">
@@ -58,7 +57,7 @@ const featured = getFeaturedProjects();
             בדיקת התאמה לפרויקט
             <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
           </a>
-          <a href="/#about" class="text-[11px] uppercase tracking-[0.2em] text-faded transition-colors hover:text-ink">
+          <a href="/#about" class="text-[11px] uppercase tracking-[0.2em] text-ink/75 transition-colors hover:text-ink">
             הגישה שלנו ←
           </a>
         </div>

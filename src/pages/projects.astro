@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import HorizontalScroll from "@/components/HorizontalScroll.astro";
 import { projects, getFeaturedProjects } from "@/data/projects.js";
 
 const featured = getFeaturedProjects();
@@ -26,9 +27,9 @@ const rest = projects.filter((p) => !p.image);
     </div>
   </section>
 
-  <!-- HORIZONTAL SCROLL GALLERY -->
-  <section class="relative overflow-hidden py-12">
-    <div class="h-scroll flex gap-8 overflow-x-auto px-[max(24px,6vw)] pb-6" tabindex="0" aria-label="גלריית פרויקטים — גלילה אופקית">
+  <!-- PINNED HORIZONTAL SCROLL GALLERY -->
+  <section class="relative mt-16">
+    <HorizontalScroll ariaLabel="גלריית פרויקטים">
       {
         featured.map((project) => (
           <article class="group w-[80vw] flex-none sm:w-[52vw] md:w-[42vw] lg:w-[36vw]">
@@ -56,7 +57,7 @@ const rest = projects.filter((p) => !p.image);
           </article>
         ))
       }
-    </div>
+    </HorizontalScroll>
   </section>
 
   <!-- ALL PROJECTS LIST -->

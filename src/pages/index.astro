@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import HorizontalScroll from "@/components/HorizontalScroll.astro";
 import heroPoster from "@/assets/plaza-hero.png";
 import { getFeaturedProjects } from "@/data/projects.js";
 
@@ -16,59 +17,74 @@ const featured = getFeaturedProjects();
   <h1 class="sr-only">פלאזה יזמות והתחדשות עירונית — מובילים את העתיד של ההתחדשות העירונית</h1>
 
   <!-- HERO -->
-  <section class="editorial relative overflow-hidden pb-20 pt-24 md:pt-32">
-    <span class="editorial-bg-word" aria-hidden="true">פלאזה</span>
-    <div class="relative z-[1] mx-auto max-w-screen-xl px-6">
-      <div class="grid items-center gap-14 md:grid-cols-12 md:gap-10">
-        <div class="md:col-span-6">
-          <div class="editorial-frame mb-9">התחדשות עירונית</div>
-          <h2 class="text-balance font-serif text-[clamp(2.6rem,6vw,4.6rem)] font-light leading-[1.05]">
-            מובילים את העתיד
-            <br />
-            <span class="text-accent">של ההתחדשות העירונית.</span>
-          </h2>
-          <p class="mt-9 max-w-[50ch] text-lg leading-[1.9] text-faded md:text-xl">
-            פלאזה יזמות והתחדשות עירונית, בשיתוף קבוצת טל שג, מביאה שילוב בין ניסיון מוכח, חשיבה חדשה ושותפות אמיתית עם הדיירים.
-          </p>
-          <div class="mt-10 flex flex-wrap items-center gap-8">
-            <a
-              href="/contact"
-              class="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
-            >
-              בדיקת התאמה לפרויקט
-              <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
-            </a>
-            <a href="/#about" class="text-[11px] uppercase tracking-[0.2em] text-faded transition-colors hover:text-ink">
-              הגישה שלנו ←
-            </a>
-          </div>
-        </div>
-        <div class="md:col-span-6">
-          <video
-            src="/hero.mp4"
-            poster={heroPoster.src}
-            autoplay
-            muted
-            loop
-            playsinline
-            aria-label="חזון פלאזה — התחדשות עירונית"
-            class="aspect-[4/3] w-full rounded-[min(1vw,12px)] object-cover shadow-[0_35px_80px_rgba(0,0,0,0.14)]"
-          ></video>
-          <noscript>
-            <Image
-              src={heroPoster}
-              alt="חזון פלאזה — בניינים מודרניים והתחדשות עירונית"
-              width={1200}
-              height={900}
-              format="png"
-              loading="eager"
-              class="aspect-[4/3] w-full rounded-[min(1vw,12px)] object-cover"
-            />
-          </noscript>
+  <section class="relative flex min-h-[100svh] w-full items-center overflow-hidden">
+    <video
+      src="/hero.mp4"
+      poster={heroPoster.src}
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+      data-hero-video
+      class="absolute inset-0 h-full w-full object-cover"
+    ></video>
+    <div
+      aria-hidden="true"
+      class="absolute inset-0"
+      style="background: linear-gradient(to left, var(--color-base) 0%, color-mix(in oklab, var(--color-base) 72%, transparent) 40%, color-mix(in oklab, var(--color-base) 20%, transparent) 70%, transparent 100%)"
+    ></div>
+    <div
+      aria-hidden="true"
+      class="absolute inset-x-0 bottom-0 h-40"
+      style="background: linear-gradient(180deg, transparent, var(--color-base))"
+    ></div>
+    <div class="relative z-[1] mx-auto w-full max-w-screen-xl px-6">
+      <div class="max-w-[520px]">
+        <div class="editorial-frame mb-9 bg-base/60 backdrop-blur-sm">התחדשות עירונית</div>
+        <h2 class="text-balance font-serif text-[clamp(2.6rem,6vw,4.6rem)] font-light leading-[1.05]">
+          מובילים את העתיד
+          <br />
+          <span class="text-accent">של ההתחדשות העירונית.</span>
+        </h2>
+        <p class="mt-9 max-w-[50ch] text-lg leading-[1.9] text-faded md:text-xl">
+          פלאזה יזמות והתחדשות עירונית, בשיתוף קבוצת טל שג, מביאה שילוב בין ניסיון מוכח, חשיבה חדשה ושותפות אמיתית עם הדיירים.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-8">
+          <a
+            href="/contact"
+            class="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
+          >
+            בדיקת התאמה לפרויקט
+            <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
+          </a>
+          <a href="/#about" class="text-[11px] uppercase tracking-[0.2em] text-faded transition-colors hover:text-ink">
+            הגישה שלנו ←
+          </a>
         </div>
       </div>
     </div>
+    <noscript>
+      <Image
+        src={heroPoster}
+        alt="חזון פלאזה — בניינים מודרניים והתחדשות עירונית"
+        width={1600}
+        height={1200}
+        format="png"
+        loading="eager"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </noscript>
   </section>
+
+  <script is:inline>
+    (() => {
+      const video = document.querySelector("[data-hero-video]");
+      if (video && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        video.pause();
+      }
+    })();
+  </script>
 
   <!-- ABOUT -->
   <section id="about" class="mx-auto max-w-screen-xl px-6 pb-28 pt-20 md:pt-28">
@@ -123,10 +139,10 @@ const featured = getFeaturedProjects();
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS: HORIZONTAL SCROLL -->
-  <section class="relative overflow-hidden py-16">
+  <!-- FEATURED PROJECTS: PINNED HORIZONTAL SCROLL -->
+  <section class="relative mt-24">
     <div class="mx-auto max-w-screen-xl px-6">
-      <div class="mb-10 flex flex-wrap items-end justify-between gap-6 border-t border-line pt-12">
+      <div class="mb-14 flex flex-wrap items-end justify-between gap-6 border-t border-line pt-12">
         <div>
           <div class="editorial-frame mb-6">פרויקטים</div>
           <h2 class="max-w-[22ch] text-balance font-serif text-[clamp(2rem,4vw,3.4rem)] font-light leading-[1.1]">
@@ -135,15 +151,15 @@ const featured = getFeaturedProjects();
           </h2>
         </div>
         <p class="hidden max-w-[36ch] text-sm leading-relaxed text-faded md:block">
-          גללו הצידה כדי להכיר את הפרויקטים שלנו בישראל ובקנדה.
+          המשיכו לגלול — הרשימה נעה איתכם.
         </p>
       </div>
     </div>
 
-    <div class="h-scroll flex gap-6 overflow-x-auto px-[max(24px,6vw)] pb-4" tabindex="0" aria-label="רשימת פרויקטים — גלילה אופקית">
+    <HorizontalScroll ariaLabel="רשימת פרויקטים נבחרים">
       {
         featured.map((project) => (
-          <article class="group w-[78vw] flex-none sm:w-[46vw] md:w-[40vw] lg:w-[34vw]">
+          <article class="group w-[78vw] flex-none sm:w-[52vw] md:w-[44vw] lg:w-[36vw]">
             <a href="/projects" class="block">
               <div class="relative overflow-hidden rounded-[min(1vw,12px)] bg-paper">
                 {
@@ -169,7 +185,7 @@ const featured = getFeaturedProjects();
           </article>
         ))
       }
-    </div>
+    </HorizontalScroll>
   </section>
 
   <!-- PARTNERSHIP -->

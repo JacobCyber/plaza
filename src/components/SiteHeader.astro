@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.png";
 
 const { currentPath = "/" } = Astro.props;
 
@@ -21,7 +21,7 @@ const navItems = [
 <nav class="sticky top-0 z-50 border-b border-line bg-base/80 backdrop-blur-md" aria-label="ניווט ראשי">
   <div class="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-6">
     <a href="/" class="flex items-center gap-3" aria-label="פלאזה — דף הבית">
-      <Image src={logo} alt="פלאזה יזמות והתחדשות עירונית" height={48} width={160} format="webp" loading="eager" decoding="sync" class="h-12 w-auto" />
+      <Image src={logo} alt="פלאזה יזמות והתחדשות עירונית" height={48} width={128} format="webp" loading="eager" decoding="sync" class="h-12 w-auto" />
     </a>
     <div class="hidden items-center gap-8 text-sm md:flex">
       {
@@ -76,7 +76,7 @@ const navItems = [
   <div class="flex h-full flex-col px-6 pb-6 pt-5">
     <div class="flex h-11 items-center justify-between">
       <a href="/" class="flex items-center gap-3" aria-label="פלאזה — דף הבית" data-mobile-menu-link>
-        <Image src={logo} alt="פלאזה" height={40} width={130} format="webp" loading="lazy" class="h-10 w-auto" />
+        <Image src={logo} alt="פלאזה" height={40} width={107} format="webp" loading="lazy" class="h-10 w-auto" />
       </a>
       <button
         type="button"

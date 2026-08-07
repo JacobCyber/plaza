@@ -10,7 +10,7 @@ const {
   noindex = false,
   includeHeader = true,
   includeFooter = true,
-  maintenance = true,
+  maintenance = false,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
@@ -25,7 +25,7 @@ const ogImage = image ? new URL(image.src ?? image, Astro.site ?? Astro.url.orig
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="פלאזה יזמות והתחדשות עירונית" />
-    <meta name="theme-color" content="#FAFAF7" />
+    <meta name="theme-color" content="#F2EEE5" />
     <link rel="canonical" href={canonicalUrl.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     {noindex && <meta name="robots" content="noindex,nofollow" />}

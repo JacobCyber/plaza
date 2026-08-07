@@ -7,6 +7,13 @@
         fill: #a9785a;
       }
 
+      .st1 {
+        fill: #fff;
+        font-family: Raleway-ExtraLight, Raleway;
+        font-size: 90px;
+        font-weight: 200;
+      }
+
       .st1, .st2 {
         isolation: isolate;
       }
@@ -17,18 +24,13 @@
         stroke-miterlimit: 10;
         stroke-width: 4px;
       }
-
-      .st2 {
-        fill: #2a2c20;
-        font-family: Raleway-ExtraLight, Raleway;
-        font-size: 90px;
-        font-weight: 200;
-      }
     </style>
   </defs>
   <path class="st3" d="M134.1,302"/>
   <path class="st0" d="M110.3,276.8l-70,39.8v79.7l70,39.8,69-39.2,1-.6v-79.7l-70-39.8h0ZM81.1,348.8v-10.2l29.6-16.7,29.6,16.7v33.3l-27.6,15.6v-38.6h-4v81.8l-27.6-15.7v-66.1h0ZM176.3,394l-63.5,36.1v-38l31.6-17.8v-38l-33.6-18.9-33.6,18.9v76.4l-32.9-18.7v-75l66-37.5,66,37.5v75h0Z"/>
-  <g class="st1">
-    <text class="st2" transform="translate(201.3 395)"><tspan x="0" y="0">PLAZA</tspan></text>
+  <g class="st2">
+    <g class="st2">
+      <text class="st1" transform="translate(201.3 395)"><tspan x="0" y="0">PLAZA</tspan></text>
+    </g>
   </g>
 </svg>

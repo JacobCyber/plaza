@@ -143,8 +143,7 @@ const featured = getFeaturedProjects();
   <section class="relative mt-24">
     <div class="mx-auto max-w-screen-xl px-6">
       <div class="mb-14 flex flex-wrap items-end justify-between gap-6 border-t border-line pt-12">
-        <div>
-          <div class="editorial-frame mb-6">פרויקטים</div>
+        <div class="editorial-number mb-6">01</div>
           <h2 class="max-w-[22ch] text-balance font-serif text-[clamp(2rem,4vw,3.4rem)] font-light leading-[1.1]">
             מהשטח
             <span class="text-accent">אל העתיד.</span>
@@ -177,9 +176,6 @@ const featured = getFeaturedProjects();
               </div>
               <div class="mt-5 flex items-baseline justify-between gap-4 border-b border-line pb-4">
                 <h3 class="font-serif text-2xl font-light">{project.name}</h3>
-                <p class="text-[10px] uppercase tracking-[0.3em] text-accent">
-                  {project.region === "israel" ? "ישראל" : "קנדה"}
-                </p>
               </div>
             </a>
           </article>
@@ -214,15 +210,17 @@ const featured = getFeaturedProjects();
   </section>
 
   <!-- CTA -->
-  <section class="mx-auto max-w-screen-xl px-6 pb-32">
-    <div class="border-t border-line pt-16 text-center">
-      <div class="mx-auto max-w-xl space-y-8">
+  <section class="dark-band px-6 py-28 md:py-36">
+    <span class="editorial-bg-word" aria-hidden="true">פלאזה</span>
+    <div class="relative z-[1] mx-auto max-w-screen-xl text-center">
+      <div class="mx-auto max-w-2xl space-y-8">
+        <div class="editorial-frame editorial-frame--dark mb-10">צרו קשר</div>
         <h2 class="text-balance font-serif text-[clamp(2rem,4vw,3.2rem)] font-light leading-[1.15]">
           ניסיון חזק מאחורינו.
           <br />
-          <span class="text-accent">שותפות אמיתית לפנינו.</span>
+          <span class="text-[var(--gradient-start)]">שותפות אמיתית לפנינו.</span>
         </h2>
-        <p class="mx-auto max-w-[52ch] text-sm leading-relaxed text-faded">
+        <p class="mx-auto max-w-[52ch] text-sm leading-relaxed text-base/60">
           מעוניינים לשמוע עוד? צרו קשר ובדקו התאמה לפרויקט שלכם. אנחנו כאן בשבילכם.
         </p>
         <div class="flex flex-col items-center gap-6 pt-2 sm:flex-row sm:justify-center">
@@ -235,7 +233,7 @@ const featured = getFeaturedProjects();
           </a>
           <a
             href="mailto:OFFICE@PLAZA-IL.COM"
-            class="inline-flex items-center gap-3 rounded-full px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-ink ring-1 ring-line transition-colors hover:bg-paper"
+            class="inline-flex items-center gap-3 rounded-full border border-base/25 px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-base transition-colors hover:border-base/60"
           >
             OFFICE@PLAZA-IL.COM
           </a>

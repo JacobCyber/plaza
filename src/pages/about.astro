@@ -21,18 +21,59 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- INTRO -->
+  <!-- WIDE DIVIDER -->
+  <div class="mx-auto max-w-screen-xl px-6 pb-24" aria-hidden="true">
+    <div class="plaza-divider"></div>
+  </div>
+
+  <!-- APPROACH -->
   <section class="mx-auto max-w-screen-xl px-6 pb-24">
     <div class="grid items-start gap-12 md:grid-cols-12 md:gap-16">
       <div class="md:col-span-5">
+        <div class="editorial-number mb-6">01</div>
         <div class="editorial-frame mb-8">הגישה שלנו</div>
+        <h2 class="text-balance font-serif text-[clamp(2rem,4vw,3.2rem)] font-light leading-[1.15]">
+          התחדשות עירונית
+          <span class="text-accent">מתחילה באנשים.</span>
+        </h2>
       </div>
-      <div class="md:col-span-6 md:col-start-7">
+      <div class="space-y-6 md:col-span-6 md:col-start-7">
         <p class="text-lg leading-[1.9] text-faded">
           התחדשות עירונית היא הרבה מעבר לפרויקט בנייה. מאחורי כל בניין, כל דירה וכל תכנית עומדים אנשים, משפחות וזיכרונות. לכן אנו מאמינים שתהליך אמיתי חייב להתחיל בהקשבה, בכבוד ובשותפות מלאה עם הדיירים.
         </p>
-        <p class="mt-6 text-lg leading-[1.9] text-faded">
+        <p class="text-lg leading-[1.9] text-faded">
           אמון נבנה באמצעות שקיפות. לאורך כל הדרך אנו נקפיד על תקשורת ברורה, עדכונים שוטפים והנגשת כל מידע חשוב — כדי שכל אחד ואחת ידעו היכן הדברים עומדים ומה צפוי בהמשך.
+        </p>
+        <p class="text-lg leading-[1.9] text-faded">
+          החלטות משמעותיות, שלבי התקדמות ושינויים בתהליך יוצגו בצורה מסודרת וברורה. התפקיד שלנו הוא להפוך תהליך מורכב ולעיתים מלווה בחוסר ודאות — לתהליך ברור, מקצועי ונעים יותר, באמצעות ליווי אישי, זמינות והקשבה אמיתית לצרכים שלכם.
+        </p>
+        <blockquote class="mt-10">
+          <div class="editorial-rule mb-8"></div>
+          <p class="text-balance font-serif text-2xl font-light leading-[1.35] md:text-3xl">
+            "הדיירים אינם רק צד בתהליך — הם שותפים מלאים
+            <span class="text-accent">ליצירת העתיד של הבית שלהם.</span>"
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="mx-auto max-w-screen-xl px-6 pb-24">
+    <div class="grid items-start gap-12 border-t border-line pt-14 md:grid-cols-12 md:gap-16">
+      <div class="md:col-span-5">
+        <div class="editorial-number mb-6">02</div>
+        <div class="editorial-frame mb-8">הסיפור שלנו</div>
+      </div>
+      <div class="space-y-6 md:col-span-6 md:col-start-7">
+        <p class="text-lg leading-[1.9] text-faded">
+          כאשר הקמנו את פלאזה יזמות והתחדשות עירונית, שמנו לעצמנו מטרה ברורה: להביא גישה חדשה לעולם ההתחדשות העירונית — גישה שבה הדיירים אינם רק צד בתהליך, אלא שותפים מלאים לדרך.
+        </p>
+        <p class="text-lg leading-[1.9] text-faded">
+          לצד הגישה האנושית, אנו מביאים ניסיון מקצועי משמעותי באמצעות שיתוף הפעולה עם קבוצת טל שג, בעלת ניסיון רב בתחום היזמות והבנייה בישראל ובשיתופי פעולה עם חברות מובילות. השילוב בין ניסיון מוכח לבין הסתכלות חדשה על מערכת היחסים עם הדיירים מאפשר לנו להוביל תהליכים באחריות, במקצועיות ובמחויבות מלאה.
+        </p>
+        <p class="text-lg leading-[1.9] text-faded">
+          החזון שלנו פשוט: לבנות לא רק בניינים חדשים, אלא ליצור סביבת מגורים טובה יותר — תוך שמירה על אמון, כבוד ושיתוף פעולה לאורך כל הדרך.
         </p>
       </div>
     </div>
@@ -41,6 +82,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
   <!-- PRINCIPLES -->
   <section class="mx-auto max-w-screen-xl px-6 pb-24">
     <div class="border-t border-line pt-14">
+      <div class="editorial-number mb-6">03</div>
+      <div class="editorial-frame mb-12">הערכים שלנו</div>
       <div class="grid gap-x-10 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
         {
           [
@@ -71,7 +114,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
           ].map((item) => (
             <div class="space-y-4">
               <div class="editorial-rule"></div>
-              <h2 class="font-serif text-2xl font-light">{item.word}</h2>
+              <h3 class="font-serif text-2xl font-light">{item.word}</h3>
               <p class="text-sm leading-relaxed text-faded">{item.copy}</p>
             </div>
           ))

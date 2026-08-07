@@ -46,13 +46,10 @@ const rest = projects.filter((p) => !p.image);
                   />
                 )
               }
-              <div class="absolute inset-x-0 bottom-0 p-6" style="background: linear-gradient(to top, rgba(34,33,29,0.6) 0%, transparent 70%)"></div>
+              <div class="absolute inset-x-0 bottom-0 p-6" style="background: linear-gradient(to top, rgba(27,26,22,0.6) 0%, transparent 70%)"></div>
             </div>
             <div class="mt-5 flex items-baseline justify-between gap-4 border-b border-line pb-4">
               <h2 class="font-serif text-2xl font-light md:text-3xl">{project.name}</h2>
-              <p class="text-[10px] uppercase tracking-[0.3em] text-accent">
-                {project.region === "israel" ? "ישראל" : "קנדה"}
-              </p>
             </div>
           </article>
         ))
@@ -63,37 +60,49 @@ const rest = projects.filter((p) => !p.image);
   <!-- ALL PROJECTS LIST -->
   <section class="mx-auto max-w-screen-xl px-6 pb-28 pt-10">
     <div class="border-t border-line pt-14">
+      <div class="editorial-number mb-6">02</div>
       <div class="editorial-frame mb-12">כל הפרויקטים</div>
       <div class="grid grid-cols-1 gap-x-12 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
         {
           projects.map((project) => (
             <div class="group flex items-baseline justify-between gap-4 border-b border-line/60 py-4 transition-colors hover:border-accent">
               <p class="font-serif text-xl font-light">{project.name}</p>
-              <p class="text-[10px] uppercase tracking-[0.3em] text-accent">
-                {project.region === "israel" ? "ישראל" : "קנדה"}
-              </p>
             </div>
           ))
         }
       </div>
     </div>
+  </section>
 
-    <!-- CTA -->
-    <div class="mt-24 text-center">
-      <h2 class="text-balance font-serif text-3xl font-light md:text-4xl">
-        רוצים לשמוע על
-        <span class="text-accent">הפרויקטים שלנו?</span>
-      </h2>
-      <p class="mx-auto mt-4 max-w-[48ch] text-sm text-faded">
-        צרו קשר לקבלת מידע נוסף.
-      </p>
-      <a
-        href="/contact"
-        class="group mt-8 inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
-      >
-        צור קשר
-        <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
-      </a>
+  <!-- DARK CTA BAND -->
+  <section class="dark-band px-6 py-28 md:py-36">
+    <span class="editorial-bg-word" aria-hidden="true">פרויקטים</span>
+    <div class="relative z-[1] mx-auto max-w-screen-xl text-center">
+      <div class="mx-auto max-w-2xl space-y-8">
+        <div class="editorial-frame editorial-frame--dark mb-10">מעבר לפרויקט</div>
+        <h2 class="text-balance font-serif text-[clamp(2rem,4vw,3.2rem)] font-light leading-[1.15]">
+          לכל פרויקט
+          <span class="text-[var(--gradient-start)]">יש סיפור.</span>
+        </h2>
+        <p class="mx-auto max-w-[52ch] text-sm leading-relaxed text-base/60">
+          צרו קשר לקבלת מידע נוסף על הפרויקטים שלנו.
+        </p>
+        <div class="flex flex-col items-center gap-6 pt-2 sm:flex-row sm:justify-center">
+          <a
+            href="/contact"
+            class="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
+          >
+            צור קשר
+            <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
+          </a>
+          <a
+            href="mailto:OFFICE@PLAZA-IL.COM"
+            class="inline-flex items-center gap-3 rounded-full border border-base/25 px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-base transition-colors hover:border-base/60"
+          >
+            OFFICE@PLAZA-IL.COM
+          </a>
+        </div>
+      </div>
     </div>
   </section>
   </main>

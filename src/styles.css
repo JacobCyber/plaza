@@ -97,17 +97,17 @@
 }
 
 :root {
-  --base: #FAFAF7;
-  --paper: #F3F2ED;
-  --ink: #2A2C20;
-  --faded: #A6A99B;
-  --accent: #B59884;
-  --line: #2A2C2012;
+  --base: #F5F2EC;
+  --paper: #EDE8E0;
+  --ink: #22211D;
+  --faded: #8B8576;
+  --accent: #A6854D;
+  --line: #22211D14;
   --radius: 12px;
-  --gradient-start: #D69163;
-  --gradient-mid: #AF6D4C;
-  --gradient-deep: #954B29;
-  --gradient-dark: #442611;
+  --gradient-start: #C9A66B;
+  --gradient-mid: #A6854D;
+  --gradient-deep: #7A5A2E;
+  --gradient-dark: #3E2C14;
 }
 
 @layer base {
@@ -183,4 +183,76 @@
   height: 2px;
   background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-deep));
   border: none;
+}
+
+/* Editorial frame: thin gold-bordered label */
+.editorial-frame {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  padding: 12px 26px;
+  color: var(--accent);
+  letter-spacing: 0.35em;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Giant background word */
+.editorial-bg-word {
+  position: absolute;
+  top: 0;
+  inset-inline-start: -20px;
+  font-family: var(--font-serif);
+  font-size: clamp(120px, 18vw, 260px);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--line);
+  user-select: none;
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Editorial quote rule */
+.editorial-rule {
+  width: 90px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* Horizontal scroll track */
+.h-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.h-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sticky horizontal pinned section */
+.h-pinned {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+}
+.h-pinned-track {
+  display: flex;
+  gap: clamp(24px, 3vw, 48px);
+  padding-inline: max(24px, 6vw);
+  align-items: stretch;
+  width: max-content;
+  flex: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .plaza-fade-in {
+    animation: none;
+  }
 }

@@ -1,127 +1,101 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-
-const team = [
-  {
-    name: "טדי ליכטשיין",
-    role: "יו\"ר הדירקטוריון – קבוצת טל שג",
-    description: "מוביל את הדירקטוריון ומביא עמו ניסיון רב בניהול והובלת מהלכים עסקיים ופרויקטים משמעותיים בתחום היזמות והבנייה.",
-  },
-  {
-    name: "אנטוני הלר",
-    role: "יו\"ר פלאזה אינטרנשיונל",
-    description: "מוביל את הפעילות הבינלאומית של קבוצת פלאזה ומביא ראייה גלובלית וניסיון בתחום הנדל\"ן והפיתוח.",
-  },
-  {
-    name: "שימי גרוסמן",
-    role: "מנכ\"ל – קבוצת טל שג",
-    description: "שותף מרכזי בפעילות הקבוצה, בעל מעורבות בהובלת תהליכים עסקיים ופרויקטים בתחום ההתחדשות העירונית.",
-  },
-  {
-    name: "נתן אוירבך",
-    role: "סמנכ\"ל",
-    description: "אחראי על ניהול והובלת תהליכים מרכזיים בחברה, תוך דגש על מקצועיות, ביצוע ותיאום בין הגורמים השונים.",
-  },
-  {
-    name: "גב וולמן",
-    role: "מנכ\"ל – פלאזה יזמות והתחדשות עירונית",
-    description: "מוביל את פעילות החברה, את הקשר עם הדיירים ואת יישום החזון של פלאזה בתחום ההתחדשות העירונית.",
-  },
-  {
-    name: "יצחק שטרן",
-    role: "יועץ משפטי",
-    description: "מלווה את פעילות החברה מהבחינה המשפטית ומעניק מעטפת מקצועית לתהליכי ההתחדשות העירונית.",
-  },
-  {
-    name: "מתס ליכטשיין",
-    role: "מנהל פרויקטים",
-    description: "אחראי על ניהול וקידום פרויקטים, תוך שמירה על איכות, תכנון מדויק ועמידה ביעדים.",
-  },
-  {
-    name: "דביר ציפל",
-    role: "סמנכ\"ל כספים",
-    description: "אחראי על ניהול המערך הפיננסי של החברה, בקרה תקציבית ותכנון פיננסי ארוך טווח.",
-  },
-];
 ---
 
 <BaseLayout
   title="אודותינו | פלאזה יזמות והתחדשות עירונית"
-  description="הנהלת פלאזה יזמות והתחדשות עירונית — הצוות שמוביל את החזון של התחדשות עירונית בישראל."
+  description="פלאזה יזמות והתחדשות עירונית — חברה המובילה תהליכי התחדשות עירונית בישראל בשותפות עם קבוצת טל שג. ניסיון, שקיפות ושותפות אמיתית עם הדיירים."
 >
   <main id="main-content">
-  <section class="mx-auto max-w-screen-xl px-6 pb-16 pt-20 md:pb-24 md:pt-28">
-    <p class="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-faded">
-      <span class="inline-block h-px w-8 bg-ink/40"></span>
-      אודותינו
-    </p>
-    <h1 class="max-w-[18ch] text-balance font-serif text-5xl leading-[0.95] md:text-7xl">
-      הנהלת
-      <span class="text-accent">החברה.</span>
-    </h1>
-    <p class="mt-8 max-w-[58ch] text-lg leading-relaxed text-faded">
-      האנשים שמובילים את החזון.
-    </p>
+  <section class="editorial relative overflow-hidden pb-10 pt-24 md:pt-32">
+    <span class="editorial-bg-word" aria-hidden="true">פלאזה</span>
+    <div class="relative z-[1] mx-auto max-w-screen-xl px-6">
+      <div class="editorial-frame mb-9">אודותינו</div>
+      <h1 class="max-w-[18ch] text-balance font-serif text-[clamp(2.6rem,6vw,4.6rem)] font-light leading-[1.05]">
+        החזון
+        <span class="text-accent">שלנו.</span>
+      </h1>
+      <p class="mt-8 max-w-[58ch] text-lg leading-[1.9] text-faded">
+        פלאזה יזמות והתחדשות עירונית קמה כדי להביא גישה חדשה לעולם ההתחדשות העירונית — גישה שבה הדיירים הם שותפים מלאים לדרך.
+      </p>
+    </div>
   </section>
 
   <!-- INTRO -->
-  <section class="mx-auto max-w-screen-xl px-6 pb-20">
-    <div class="grid gap-10 md:grid-cols-12 md:gap-16">
+  <section class="mx-auto max-w-screen-xl px-6 pb-24">
+    <div class="grid items-start gap-12 md:grid-cols-12 md:gap-16">
       <div class="md:col-span-5">
-        <p class="text-lg leading-relaxed text-faded">
-          מאחורי פלאזה יזמות והתחדשות עירונית עומדת הנהלה מקצועית המשלבת ניסיון רב שנים ביזמות, בנייה, פיננסים, משפט וניהול פרויקטים.
-        </p>
+        <div class="editorial-frame mb-8">הגישה שלנו</div>
       </div>
       <div class="md:col-span-6 md:col-start-7">
-        <p class="text-lg leading-relaxed text-faded">
-          הצוות שלנו מחבר בין ראייה אסטרטגית, יכולות ביצוע מוכחות ומחויבות אמיתית לשותפות עם הדיירים.
+        <p class="text-lg leading-[1.9] text-faded">
+          התחדשות עירונית היא הרבה מעבר לפרויקט בנייה. מאחורי כל בניין, כל דירה וכל תכנית עומדים אנשים, משפחות וזיכרונות. לכן אנו מאמינים שתהליך אמיתי חייב להתחיל בהקשבה, בכבוד ובשותפות מלאה עם הדיירים.
+        </p>
+        <p class="mt-6 text-lg leading-[1.9] text-faded">
+          אמון נבנה באמצעות שקיפות. לאורך כל הדרך אנו נקפיד על תקשורת ברורה, עדכונים שוטפים והנגשת כל מידע חשוב — כדי שכל אחד ואחת ידעו היכן הדברים עומדים ומה צפוי בהמשך.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- TEAM GRID -->
-  <section class="mx-auto max-w-screen-xl px-6 pb-32">
-    <div class="border-t border-line pt-12">
-      <p class="mb-12 text-[11px] uppercase tracking-[0.3em] text-faded">
-        <span class="inline-block h-px w-8 bg-ink/40"></span>
-        הצוות
-      </p>
-
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {team.map((member, i) => (
-          <div class="group space-y-4">
-            <div class="aspect-[3/4] overflow-hidden rounded-[min(1vw,12px)] bg-paper">
-              <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-paper to-[var(--color-line)] p-6">
-                <span class="font-serif text-5xl text-accent/30 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-              </div>
+  <!-- PRINCIPLES -->
+  <section class="mx-auto max-w-screen-xl px-6 pb-24">
+    <div class="border-t border-line pt-14">
+      <div class="grid gap-x-10 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+        {
+          [
+            {
+              word: "שקיפות מלאה",
+              copy: "תקשורת ברורה, עדכונים שוטפים והנגשת כל מידע חשוב לדיירים — בלי הפתעות.",
+            },
+            {
+              word: "ליווי אישי",
+              copy: "זמינות, הקשבה אמיתית ותמיכה אישית בכל שלב בתהליך, מהרגע הראשון ועד למסירת המפתחות.",
+            },
+            {
+              word: "ניסיון מוכח",
+              copy: "שיתוף פעולה עם קבוצת טל שג מביא עמו ניסיון רב שנים ביזמות ובנייה בפרויקטים משמעותיים בישראל.",
+            },
+            {
+              word: "שותפות עם הדיירים",
+              copy: "הדיירים אינם רק צד בתהליך — הם שותפים מלאים לדרך, ליצירת העתיד של הבית שלהם.",
+            },
+            {
+              word: "ראייה אנושית",
+              copy: "מאחורי כל בניין עומדים אנשים ומשפחות. אנו בונים סביבת מגורים טובה יותר, תוך שמירה על אמון וכבוד.",
+            },
+            {
+              word: "מקצועיות",
+              copy: "השילוב בין ניסיון מוכח להסתכלות חדשה מאפשר לנו להוביל תהליכים באחריות ובמחויבות מלאה.",
+            },
+          ].map((item) => (
+            <div class="space-y-4">
+              <div class="editorial-rule"></div>
+              <h2 class="font-serif text-2xl font-light">{item.word}</h2>
+              <p class="text-sm leading-relaxed text-faded">{item.copy}</p>
             </div>
-            <div class="space-y-1">
-              <h3 class="font-serif text-xl">{member.name}</h3>
-              <p class="text-[11px] uppercase tracking-[0.2em] text-accent">{member.role}</p>
-            </div>
-            <p class="text-sm leading-relaxed text-faded">{member.description}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="mx-auto max-w-screen-xl px-6 pb-32">
-    <div class="rounded-[min(1vw,16px)] bg-paper px-8 py-12 text-center md:px-16">
-      <h2 class="text-balance font-serif text-2xl md:text-3xl">
-        רוצים להכיר אותנו מקרוב?
+    <div class="text-center">
+      <h2 class="text-balance font-serif text-3xl font-light md:text-4xl">
+        רוצים להכיר אותנו
+        <span class="text-accent">מקרוב?</span>
       </h2>
-      <p class="mx-auto mt-3 max-w-[48ch] text-sm text-faded">
+      <p class="mx-auto mt-4 max-w-[48ch] text-sm text-faded">
         צרו קשר ונתאם פגישת היכרות.
       </p>
       <a
         href="/contact"
-        class="mt-6 inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
+        class="group mt-8 inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-base)] transition-colors hover:bg-[var(--gradient-mid)]"
       >
         צור קשר
-        <span aria-hidden="true">←</span>
+        <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">←</span>
       </a>
     </div>
   </section>

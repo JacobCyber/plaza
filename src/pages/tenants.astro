@@ -7,15 +7,15 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
   description="המדריך שלכם להתחדשות עירונית — מכתב אישי מהנהלות פלאזה, שלבי התהליך, זכויות הדיירים ותשובות לשאלות נפוצות."
 >
   <main id="main-content">
-  <section class="mx-auto max-w-screen-xl px-6 pb-16 pt-20 md:pb-24 md:pt-28">
-    <p class="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-faded">
-      <span class="inline-block h-px w-8 bg-ink/40"></span>
-      אגרת לדיירים
-    </p>
-    <h1 class="max-w-[18ch] text-balance font-serif text-5xl leading-[0.95] md:text-7xl">
-      המדריך שלכם
-      <span class="text-accent">להתחדשות עירונית.</span>
-    </h1>
+  <section class="editorial relative overflow-hidden pb-12 pt-24 md:pt-32">
+    <span class="editorial-bg-word" aria-hidden="true">דיירים</span>
+    <div class="relative z-[1] mx-auto max-w-screen-xl px-6">
+      <div class="editorial-frame mb-9">אגרת לדיירים</div>
+      <h1 class="max-w-[18ch] text-balance font-serif text-[clamp(2.6rem,6vw,4.6rem)] font-light leading-[1.05]">
+        המדריך שלכם
+        <span class="text-accent">להתחדשות עירונית.</span>
+      </h1>
+    </div>
   </section>
 
   <!-- PERSONAL LETTER -->
